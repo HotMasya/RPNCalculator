@@ -5,31 +5,38 @@ namespace Masya.ConsoleCalc
 {
     class Program
     {
+        private static Calculator calc = new Calculator();
+
         static void Main(string[] args)
         {
-            var calc = new Calculator();
-
             string expression = "";
-            do
+            if (args.Length == 0)
             {
                 Console.Write("Enter expression to parse: ");
                 expression = Console.ReadLine();
-                try
+            }
+            else
+            {
+                foreach (string arg in args)
                 {
-                    ParseResult result = calc.Parse(expression);
-                    Console.WriteLine("Output notation: " + result.ToString());
-                    Console.WriteLine("Calculation result: " + calc.Calculate(result));
+                    expression += arg;
                 }
-                catch (FormatException e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-                catch (ArgumentException e)
-                {
-                    Console.WriteLine(e.Message);
-                }
+            }
 
-            } while (expression.ToLower() != "exit");
+            try
+            {
+                ParseResult result = calc.Parse(expression);
+                Console.WriteLine("Output notation: " + result.ToString());
+                Console.WriteLine("Calculation result: " + calc.Calculate(result));
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
