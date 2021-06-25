@@ -81,7 +81,7 @@ namespace Masya.RPNCalculator.Core.Parsing
                         throw new FormatException("Expression contains unsupported operation type.");
                     }
 
-                    if (_stack.Count > 0 && _stack.Peek().Type != "(" && _stack.Peek().CompareTo(op) > 0)
+                    if (_stack.Count > 0 && _stack.Peek().Type != "(" && _stack.Peek().CompareTo(op) >= 0)
                     {
                         result.Output.Push(_stack.Pop());
                     }
