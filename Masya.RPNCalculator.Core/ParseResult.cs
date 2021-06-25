@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
-namespace Masya.ConsoleCalc.Core
+namespace Masya.RPNCalculator.Core
 {
     public class ParseResult
     {
@@ -10,7 +8,7 @@ namespace Masya.ConsoleCalc.Core
         public ParseResult(Stack<string> output)
         {
             Output = new Stack<string>();
-            foreach(var value in output)
+            foreach (var value in output)
             {
                 Output.Push(value);
             }

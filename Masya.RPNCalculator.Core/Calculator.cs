@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Masya.RPNCalculator.Core.Abstractions;
+using Masya.RPNCalculator.Core.Enums;
 
-namespace Masya.ConsoleCalc.Core
+namespace Masya.RPNCalculator.Core
 {
-    public class Calculator
+    [Obsolete("Deprecated")]
+    public class Calculator : ICalculator, IExpressionParser
     {
         private readonly Stack<string> _output;
         private readonly Stack<string> _operations;

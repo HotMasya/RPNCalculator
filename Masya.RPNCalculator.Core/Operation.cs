@@ -1,16 +1,8 @@
 ﻿using System;
+using Masya.RPNCalculator.Core.Enums;
 
-namespace Masya.ConsoleCalc.Core
+namespace Masya.RPNCalculator.Core
 {
-    public enum OperationPriority
-    {
-        VeryLow = 1,
-        Low = 2,
-        Medium = 3,
-        High = 4, 
-        VeriHigh = 5
-    }
-
     public class Operation
     {
         public Func<double, double, double> Func { get; set; }
