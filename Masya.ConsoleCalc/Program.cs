@@ -31,18 +31,34 @@ namespace Masya.ConsoleCalc
                 expression = Console.ReadLine();
             }
 
-            if (ShowNotation)
+            try
             {
-                var parsingResult = Factory.CreateExpressionParser().Parse(expression);
-                Console.WriteLine("Expression in reverse polish notation: " + parsingResult.ToString());
-                var calculationResult = Factory.CreateCalculator().Calculate(parsingResult);
-                Console.WriteLine("{0} = {1}", expression, calculationResult);
+                if (ShowNotation)
+                {
+                    var parsingResult = Factory.CreateExpressionParser().Parse(expression);
+                    Console.WriteLine("Expression in reverse polish notation: " + parsingResult.ToString());
+                    var calculationResult = Factory.CreateCalculator().Calculate(parsingResult);
+                    Console.WriteLine("{0} = {1}", expression, calculationResult);
+                }
+                else
+                {
+                    var calculationResult = Factory.CreateRPNCalculator().Calculate(expression);
+                    Console.WriteLine("{0} = {1}", expression, calculationResult);
+                }
             }
-            else
+            catch (FormatException e)
             {
-                var calculationResult = Factory.CreateRPNCalculator().Calculate(expression);
-                Console.WriteLine("{0} = {1}", expression, calculationResult);
+                Console.WriteLine("Invalid format: " + e.Message);
             }
+            catch (InvalidOperationException e)
+            {
+                Console.WriteLine("Invalid operation: " + e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+
         }
 
         private static string GetExpression(string[] args, int startIndex = 0)
