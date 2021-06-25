@@ -2,15 +2,15 @@ Revese Polish Notation Calculator
 =====
 This is a calculator, based on *reverse polish notation* (RPN) algorithm.
 It supports only next operations:
-    *addition (+);
-    *substraction (-);
-    *multiplication (\*);
-    *division (/);
-    *exponentiation(^);
-    *also it supports round brackets.
+    * addition (+);
+    * substraction (-);
+    * multiplication (\*);
+    * division (/);
+    * exponentiation(^);
+    * also it supports round brackets.
 
 It accepts **1** parameter:
-    *`-n` - prints the input expression as RPN.
+    * `-n` - prints the input expression as RPN.
 
 **Pattern:**
 ```cmd
