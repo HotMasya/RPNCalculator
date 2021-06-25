@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Masya.ConsoleCalc": {
+      "commandName": "Project",
+      "commandLineArgs": "-n 256/8 * 3/2 + 3 + (48 - 49)"
+    }
+  }
+}

@@ -1,7 +1,9 @@
+using Masya.RPNCalculator.Core.Parsing;
+
 namespace Masya.RPNCalculator.Core.Abstractions
 {
     public interface IExpressionParser
     {
-        ParseResult Parse(string expression);
+        ParsingResult<IOperationParticipant> Parse(string expression);
     }
 }

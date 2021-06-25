@@ -15,8 +15,8 @@ namespace Masya.RPNCalculator.Core
 
         public double Calculate(string expression)
         {
-            ParseResult result = _parser.Parse(expression);
-            return _calculator.Calculate(result);
+            var parsingResult = _parser.Parse(expression);
+            return _calculator.Calculate(parsingResult);
         }
     }
 }
