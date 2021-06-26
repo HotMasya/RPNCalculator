@@ -2,7 +2,7 @@
 using System;
 using System.Text;
 
-namespace Masya.ConsoleCalc
+namespace Masya.RPNCalculator.ConsoleUI
 {
     class Program
     {
