@@ -14,7 +14,7 @@ It accepts **1** parameter:
 
 **Pattern:**
 ```cmd
-Masya.ConsoleCalc.exe [-n] <expression>
+rpncalc [-n] <expression>
 ```
 
 Examples
@@ -23,7 +23,7 @@ There are some examples, how to work with this console calculator.
 
 **Input:**
 ```cmd
-Masya.ConsoleCalc.exe -n 2+2*2
+rpncalc -n 2+2*2
 ```
 
 **Output:**
@@ -34,7 +34,7 @@ Expression in reverse polish notation: + * 2 2 2
 
 **Input:**
 ```cmd
-Masya.ConsoleCalc.exe 256/2 * 3/2 + 8 - (2 - (8 + 11))
+rpncalc 256/2 * 3/2 + 8 - (2 - (8 + 11))
 ```
 
 **Output:**
